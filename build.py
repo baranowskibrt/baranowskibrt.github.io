@@ -25,7 +25,7 @@ def get_personal_data():
                         <a href="https://github.com/BaranowskiBrt" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg"></i> Github</a>
                         <a href="https://www.linkedin.com/in/bartlomiej-baranowski" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
                         <a href="https://twitter.com/baranowskibrt" target="_blank" style="margin-right: 5px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
-                        <a href="https://bsky.app/profile/baranowskibrt" target="_blank" style="margin-right: 5px"><i class="fab fa-bluesky fa-lg"></i> Bluesky</a>
+                        <a href="https://bsky.app/profile/baranowskibrt.bsky.social" target="_blank" style="margin-right: 5px"><i class="fab fa-bluesky fa-lg"></i> Bluesky</a>
                         <a href="https://scholar.google.com/citations?user=Y_qag2sAAAAJ" target="_blank" style="margin-right: 5px"><i class="ai ai-google-scholar ai-lg"></i> Google Scholar</a>
                 </p>
     """
