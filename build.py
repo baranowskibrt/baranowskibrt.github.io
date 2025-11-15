@@ -3,8 +3,9 @@ from pybtex.database.input import bibtex
 
 def get_personal_data():
     name = ["Bartłomiej", "Baranowski"]
-    email = ""
-    twitter = ""
+    email = "baranowskibrt@gmail.com"
+    twitter = "baranowskibrt"
+    bluesky = "baranowskibrt"
     github = "BaranowskiBrt"
     linkedin = "bartlomiej-baranowski"
     bio_text = f"""
@@ -21,11 +22,11 @@ def get_personal_data():
                     I earned a master's degree in machine learning from the University of Tübingen and a bachelor's degree in computer science from Lodz University of Technology. During my studies, I contributed to several research projects in computer vision, including work on autonomous systems and medical imaging. I see myself as an enthusiastic researcher and programmer. In my free time, I enjoy exploring new ideas, playing musical instruments, running, climbing, and staying active outdoors.
                 </p>
                 <p>
-                    <a href="https://github.com/BaranowskiBrt" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg"></i> Github</a>
-                    <a href="https://www.linkedin.com/in/bartlomiej-baranowski" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
-
-                    <div id="demo" class="collapse">
-                </div>
+                        <a href="https://github.com/BaranowskiBrt" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg"></i> Github</a>
+                        <a href="https://www.linkedin.com/in/bartlomiej-baranowski" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
+                        <a href="https://twitter.com/baranowskibrt" target="_blank" style="margin-right: 5px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
+                        <a href="https://bsky.app/profile/baranowskibrt" target="_blank" style="margin-right: 5px"><i class="fab fa-bluesky fa-lg"></i> Bluesky</a>
+                        <a href="https://scholar.google.com/citations?user=Y_qag2sAAAAJ" target="_blank" style="margin-right: 5px"><i class="ai ai-google-scholar ai-lg"></i> Google Scholar</a>
                 </p>
     """
     footer = """
@@ -136,10 +137,10 @@ def get_talks_html():
     return s
 
 def get_index_html():
-    # pub = get_publications_html()
+    pub = get_publications_html()
     # talks = get_talks_html()
-    pub = ""
-    talks = ""
+    # pub = ""
+    # talks = ""
     name, bio_text, footer = get_personal_data()
     s = f"""
     <!doctype html>
@@ -153,7 +154,12 @@ def get_index_html():
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font Awesome 6.5.2 for GitHub, LinkedIn, Twitter, Bluesky -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Academicons for Google Scholar -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <title>{name[0] + ' ' + name[1]}</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -174,6 +180,14 @@ def get_index_html():
                     </div>
                     <div class="col-md-4" style="">
                         <img src="assets/img/profile.jpg" class="img-thumbnail" width="560px" alt="Profile picture">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 1em;">
+                    <div class="col-sm-12" style="">
+                        <h4>Publications</h4>
+                        {pub}
+                    </div>
+                </div>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
@@ -211,76 +225,3 @@ def write_index_html(filename='index.html'):
 if __name__ == '__main__':
     write_index_html('index.html')
 
-
-
-
-#     s = f"""
-#     <!doctype html>
-# <html lang="en">
-
-# <head>
-#   <!-- Required meta tags -->
-#   <meta charset="utf-8">
-#   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-#   <!-- Bootstrap CSS -->
-#   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-#     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-#     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-#   <title>{name[0] + ' ' + name[1]}</title>
-#   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-# </head>
-
-# <body>
-#     <div class="container">
-#         <div class="row">
-#             <div class="col-md-1"></div>
-#             <div class="col-md-10">
-#                 <div class="row" style="margin-top: 3em;">
-#                     <div class="col-sm-12" style="margin-bottom: 1em;">
-#                     <h3 class="display-4" style="text-align: center;"><span style="font-weight: bold;">{name[0]}</span> {name[1]}</h3>
-#                     </div>
-#                     <br>
-#                     <div class="col-md-10" style="">
-#                         {bio_text}
-#                     </div>
-#                     <div class="col-md-2" style="">
-#                         <img src="assets/img/profile.jpg" class="img-thumbnail" width="280px" alt="Profile picture">
-#                     </div>
-#                 </div>
-#                 # <div class="row" style="margin-top: 1em;">
-#                 #     <div class="col-sm-12" style="">
-#                 #         <h4>Publications</h4>
-#                 #         {pub}
-#                 #     </div>
-#                 # </div>
-#                 # <div class="row" style="margin-top: 3em;">
-#                 #     <div class="col-sm-12" style="">
-#                 #         <h4>Talks</h4>
-#                 #         {talks}
-#                 #     </div>
-#                 # </div>
-#                 <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
-#                     {footer}
-#                 </div>
-#             </div>
-#             <div class="col-md-1"></div>
-#         </div?
-#     </div>
-
-#     <!-- Optional JavaScript -->
-#     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-#     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-#       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-#       crossorigin="anonymous"></script>
-#     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-#       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-#       crossorigin="anonymous"></script>
-#     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-#       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-#       crossorigin="anonymous"></script>
-# </body>
-
-# </html>
-#     """
