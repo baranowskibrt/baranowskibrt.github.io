@@ -10,7 +10,15 @@ def get_personal_data():
     linkedin = "bartlomiej-baranowski"
     bio_text = f"""
                 <p>
-                    I am a machine learning engineer with experience spanning research projects and industry applications.
+                    I am a PhD student at the Technical University of Munich, in the 
+                    <a href="https://niessnerlab.org" target="_blank" rel="noopener noreferrer">
+                        Visual Computing & Artificial Intelligence Group
+                    </a>
+                    led by 
+                    <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener noreferrer">
+                        Prof. Matthias Nießner
+                    </a>
+                    .
                 </p>
                 <p>
                     <span style="font-weight: bold;">Interests:</span>
