@@ -10,15 +10,7 @@ def get_personal_data():
     linkedin = "bartlomiej-baranowski"
     bio_text = f"""
                 <p>
-                    I am a PhD student at the Technical University of Munich, in the 
-                    <a href="https://niessnerlab.org" target="_blank" rel="noopener noreferrer">
-                        Visual Computing & Artificial Intelligence Group
-                    </a>
-                    led by 
-                    <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener noreferrer">
-                        Prof. Matthias Nießner
-                    </a>
-                    .
+                    I am a PhD student at the Technical University of Munich, in the <a href="https://niessnerlab.org" target="_blank" rel="noopener noreferrer">Visual Computing & Artificial Intelligence Group</a> led by <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener noreferrer">Prof. Matthias Nießner</a>.
                 </p>
                 <p>
                     <span style="font-weight: bold;">Interests:</span>
@@ -27,7 +19,7 @@ def get_personal_data():
 
                 <p>
                     <span style="font-weight: bold;">Bio:</span>
-                    I earned a master's degree in machine learning from the University of Tübingen and a bachelor's degree in computer science from Lodz University of Technology. During my studies, I contributed to several research projects in computer vision, including work on autonomous systems and medical imaging. I see myself as an enthusiastic researcher and programmer. In my free time, I enjoy exploring new ideas, playing musical instruments, running, climbing, and staying active outdoors.
+                    I hold a master's degree in machine learning from the University of Tübingen, where I conducted research in the lab of <a href="https://www.cvlibs.net/" target="_blank" rel="noopener noreferrer">Prof. Andreas Geiger</a>. I completed my bachelor's degree in computer science at Lodz University of Technology. During my studies, I contributed to several research projects in computer vision, including work on autonomous systems and medical imaging. I see myself as an enthusiastic researcher and programmer. In my free time, I enjoy exploring new ideas, playing musical instruments, running, climbing, and staying active outdoors.
                 </p>
                 <p>
                         <a href="https://github.com/BaranowskiBrt" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg"></i> Github</a>
