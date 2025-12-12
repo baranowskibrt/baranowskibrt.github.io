@@ -22,6 +22,7 @@ def get_personal_data():
                     I hold a master's degree in machine learning from the University of Tübingen, where I conducted research in the lab of <a href="https://www.cvlibs.net/" target="_blank" rel="noopener noreferrer">Prof. Andreas Geiger</a>. I completed my bachelor's degree in computer science at Lodz University of Technology. During my studies, I contributed to several research projects in computer vision, including work on autonomous systems and medical imaging. I see myself as an enthusiastic researcher and programmer. In my free time, I enjoy exploring new ideas, playing musical instruments, running, climbing, and staying active outdoors.
                 </p>
                 <p>
+                        <a href="mailto:bartlomiej.baranowski@tum.de" style="margin-right: 15px"><i class="far fa-envelope-open fa-lg"></i> Mail</a>
                         <a href="https://github.com/BaranowskiBrt" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg"></i> Github</a>
                         <a href="https://www.linkedin.com/in/bartlomiej-baranowski" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
                         <a href="https://twitter.com/baranowskibrt" target="_blank" style="margin-right: 5px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
