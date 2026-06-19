@@ -79,7 +79,15 @@ def get_paper_entry(entry_key, entry):
         s += f"""<a href="{entry.fields['html']}" target="_blank">{entry.fields['title']}</a> <br>"""
 
     s += f"""{generate_person_html(entry.persons['author'])} <br>"""
-    s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
+    if 'booktitle' in entry.fields.keys():
+        venue = entry.fields['booktitle']
+    elif 'journal' in entry.fields.keys():
+        venue = entry.fields['journal']
+    elif 'archiveprefix' in entry.fields.keys():
+        venue = entry.fields['archiveprefix']
+    else:
+        venue = ''
+    s += f"""<span style="font-style: italic;">{venue}</span>, {entry.fields['year']} <br>"""
 
     artefacts = {'html': 'Project Page', 'pdf': 'Paper', 'supp': 'Supplemental', 'video': 'Video', 'poster': 'Poster', 'code': 'Code'}
     i = 0
@@ -92,10 +100,16 @@ def get_paper_entry(entry_key, entry):
         else:
             print(f'[{entry_key}] Warning: Field {k} missing!')
 
-    cite = "<pre><code>@InProceedings{" + f"{entry_key}, \n"
+    bibtype = {'inproceedings': 'InProceedings', 'article': 'Article', 'misc': 'misc'}.get(entry.type, entry.type)
+    cite = "<pre><code>@" + bibtype + "{" + f"{entry_key}, \n"
     cite += "\tauthor = {" + f"{generate_person_html(entry.persons['author'], make_bold=False, add_links=False, connection=' and ')}" + "}, \n"
-    for entr in ['title', 'booktitle', 'year']:
-        cite += f"\t{entr} = " + "{" + f"{entry.fields[entr]}" + "}, \n"
+    # (label shown in bibtex, key as lowercased by pybtex); emit only the ones present
+    cite_fields = [('title', 'title'), ('booktitle', 'booktitle'), ('journal', 'journal'),
+                   ('year', 'year'), ('eprint', 'eprint'),
+                   ('archivePrefix', 'archiveprefix'), ('primaryClass', 'primaryclass')]
+    for label, key in cite_fields:
+        if key in entry.fields.keys():
+            cite += f"\t{label} = " + "{" + f"{entry.fields[key]}" + "}, \n"
     cite += """}</pre></code>"""
     s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
     s += """ </div> </div> </div>"""
