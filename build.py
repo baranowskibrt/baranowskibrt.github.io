@@ -44,6 +44,8 @@ def get_author_dict():
     return {
         'Andreas Geiger': 'https://www.cvlibs.net/',
         'Anpei Chen': 'https://apchenstu.github.io/',
+        'Dave Zhenyu Chen': 'https://daveredrum.github.io/',
+        'Matthias Nießner': 'https://niessnerlab.org/members/matthias_niessner/profile.html',
         'Stefano Esposito': 'https://s-esposito.github.io/',
         'Patricia Gschoßmann': 'https://patriciagschossmann.github.io/',
         }
@@ -53,7 +55,7 @@ def generate_person_html(persons, connection=", ", make_bold=True, make_bold_nam
     s = ""
     for p in persons:
         string_part_i = ""
-        for name_part_i in p.get_part('first') + p.get_part('last'): 
+        for name_part_i in p.get_part('first') + p.get_part('middle') + p.get_part('last'):
             if string_part_i != "":
                 string_part_i += " "
             string_part_i += name_part_i
