@@ -50,8 +50,9 @@
     .head h1{font-size:2.6rem;margin:0 0 .15rem;letter-spacing:-.015em;} .head h1 .last{font-weight:800;}
     .head .role{color:var(--muted);margin-bottom:.7rem;font-size:1.08rem;}
     .icons{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem;}
-    .icons a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--fg);font-size:1rem;transition:.15s;}
+    .icons a{position:relative;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--fg);font-size:1rem;transition:.15s;}
     .icons a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;transform:translateY(-2px);}
+    .icons a.copied::after{content:"Copied!";position:absolute;bottom:calc(100% + 7px);left:0;background:var(--fg);color:var(--bg);font-size:.7rem;font-weight:600;padding:.15rem .5rem;border-radius:5px;white-space:nowrap;pointer-events:none;box-shadow:0 2px 6px rgba(0,0,0,.2);}
     h2{font-size:.95rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:2.4rem 0 1.3rem;font-weight:700;}
     .pub{display:grid;grid-template-columns:400px 1fr;gap:0;align-items:stretch;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);margin:1.5rem 0;transition:box-shadow .2s,transform .2s;}
     .pub:hover{box-shadow:0 22px 50px -26px rgba(0,0,0,.42);transform:translateY(-2px);}
@@ -71,7 +72,7 @@
       <h1>Bartłomiej <span class="last">Baranowski</span></h1>
         <div class="role">PhD Student · Technical University of Munich</div>
         <p>I am a PhD student at the Technical University of Munich, in the <a href="https://niessnerlab.org" target="_blank" rel="noopener">Visual Computing &amp; Artificial Intelligence Group</a> led by <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener">Prof. Matthias Nießner</a>.</p><p><b>Interests.</b> I work on spatial intelligence for perceiving, reasoning about, and acting in the 3D world.</p><p><b>Bio.</b> Master&#39;s in machine learning from the University of Tübingen (lab of <a href="https://www.cvlibs.net/" target="_blank" rel="noopener">Prof. Andreas Geiger</a>), bachelor&#39;s in computer science from Lodz University of Technology. Outside research: playing accordion, running, climbing.</p>
-        <div class="icons"><a href="mailto:bartlomiej.baranowski@tum.de" title="Email"><i class="far fa-envelope-open"></i></a>
+        <div class="icons"><a href="mailto:bartlomiej.baranowski@tum.de" id="emailCopy" data-email="bartlomiej.baranowski@tum.de" title="Copy email address"><i class="far fa-envelope-open"></i></a>
         <a href="https://github.com/BaranowskiBrt" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/bartlomiej-baranowski" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://twitter.com/baranowskibrt" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
@@ -147,5 +148,15 @@
     function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;}
     function paint(){btn.textContent=isDark()?'☀️':'🌙';} paint();
     btn.addEventListener('click',function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('theme',n);paint();});
+    (function(){
+      var el=document.getElementById('emailCopy'); if(!el)return;
+      el.addEventListener('click',function(e){
+        e.preventDefault();
+        var addr=el.getAttribute('data-email');
+        function done(){el.classList.add('copied');setTimeout(function(){el.classList.remove('copied');},1400);}
+        function fallback(){var t=document.createElement('textarea');t.value=addr;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(_){}document.body.removeChild(t);done();}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done).catch(fallback);}else{fallback();}
+      });
+    })();
   </script>
 </body></html>
