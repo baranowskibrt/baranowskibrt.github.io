@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <style>:root{--bg:#ffffff;--fg:#1b1f24;--muted:#5b6570;--line:#e7e9ee;--card:#f6f7f9;--accent:#7a1f2b;--accent-soft:#a83a48;}
     :root[data-theme="dark"]{--bg:#0f1216;--fg:#e6e9ee;--muted:#9aa4b0;--line:#252b33;--card:#161b21;--accent:#e0899a;--accent-soft:#f0a9b7;}
-    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1216;--fg:#e6e9ee;--muted:#9aa4b0;--line:#252b33;--card:#161b21;--accent:#e0899a;--accent-soft:#f0a9b7;}}
     *{box-sizing:border-box;}
     body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px;}
     a{color:var(--accent);text-decoration:none;} a:hover{color:var(--accent-soft);text-decoration:underline;}
@@ -145,7 +144,7 @@
     })();
     var root=document.documentElement,btn=document.getElementById('themeToggle');
     var saved=localStorage.getItem('theme'); if(saved)root.setAttribute('data-theme',saved);
-    function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;}
+    function isDark(){return root.getAttribute('data-theme')==='dark';}
     function paint(){btn.textContent=isDark()?'☀️':'🌙';} paint();
     btn.addEventListener('click',function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('theme',n);paint();});
     (function(){
