@@ -1,111 +1,151 @@
-
-    <!doctype html>
-<html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <!-- Font Awesome 6.5.2 for GitHub, LinkedIn, Twitter, Bluesky -->
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bartłomiej Baranowski — Cards A</title>
+  <meta name="description" content="Bartłomiej Baranowski — PhD student at TUM working on spatial intelligence for perceiving, reasoning about, and acting in the 3D world.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://baranowskibrt.github.io/">
+  <meta property="og:title" content="Bartłomiej Baranowski">
+  <meta property="og:description" content="PhD student at TUM working on spatial intelligence for perceiving, reasoning about, and acting in the 3D world.">
+  <meta property="og:image" content="https://baranowskibrt.github.io/assets/img/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bartłomiej Baranowski">
+  <meta name="twitter:description" content="PhD student at TUM working on spatial intelligence for perceiving, reasoning about, and acting in the 3D world.">
+  <meta name="twitter:image" content="https://baranowskibrt.github.io/assets/img/profile.jpg">
+  <link rel="icon" type="image/png" href="assets/favicon.png"><link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- Academicons for Google Scholar -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <style>:root{--bg:#ffffff;--fg:#1b1f24;--muted:#5b6570;--line:#e7e9ee;--card:#f6f7f9;--accent:#7a1f2b;--accent-soft:#a83a48;}
+    :root[data-theme="dark"]{--bg:#0f1216;--fg:#e6e9ee;--muted:#9aa4b0;--line:#252b33;--card:#161b21;--accent:#e0899a;--accent-soft:#f0a9b7;}
+    @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1216;--fg:#e6e9ee;--muted:#9aa4b0;--line:#252b33;--card:#161b21;--accent:#e0899a;--accent-soft:#f0a9b7;}}
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px;}
+    a{color:var(--accent);text-decoration:none;} a:hover{color:var(--accent-soft);text-decoration:underline;}
+    p{margin:.7rem 0;}
+    .thumb{position:relative;overflow:hidden;border-radius:10px;border:1px solid var(--line);aspect-ratio:16/10;background:var(--card);}
+    .thumb img,.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+    .thumb video{opacity:0;transition:opacity .35s ease;} .pub:hover .thumb video{opacity:1;}
+    .thumb .badge{position:absolute;right:7px;bottom:7px;width:22px;height:22px;background:rgba(15,18,22,.62);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:opacity .25s ease;pointer-events:none;}
+    .thumb .badge::before{content:"";border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #fff;margin-left:2px;}
+    .pub:hover .thumb .badge{opacity:0;}
+    .thumb.slider .cmp{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease;}
+    .pub:hover .thumb.slider .cmp{opacity:1;} .thumb.slider .cmp-top{clip-path:inset(0 50% 0 0);}
+    .pub:hover .thumb.slider .cmp-top{animation:slideClip 4.2s ease-in-out infinite;}
+    .thumb.slider .cmp-divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 4px rgba(0,0,0,.6);opacity:0;transition:opacity .35s ease;}
+    .thumb.slider .cmp-divider::after{content:"";position:absolute;top:50%;left:50%;width:20px;height:20px;transform:translate(-50%,-50%);border-radius:50%;background:#fff;box-shadow:0 0 5px rgba(0,0,0,.5);}
+    .pub:hover .thumb.slider .cmp-divider{opacity:1;animation:slideLine 4.2s ease-in-out infinite;}
+    .thumb.slider .cmp-label{position:absolute;bottom:6px;padding:.1rem .45rem;font-size:.68rem;font-weight:700;color:#fff;background:rgba(15,18,22,.66);border-radius:4px;opacity:1;z-index:2;}
+    .thumb.slider .cmp-label.left{left:6px;} .thumb.slider .cmp-label.right{right:6px;}
+    @keyframes slideClip{0%,100%{clip-path:inset(0 78% 0 0);}50%{clip-path:inset(0 18% 0 0);}}
+    @keyframes slideLine{0%,100%{left:22%;}50%{left:82%;}}
+    .pub-title{font-weight:700;font-size:1.05rem;line-height:1.35;}
+    .pub-authors{margin:.2rem 0;} .pub-venue{color:var(--muted);font-style:italic;}
+    .badge-oral{display:inline-block;margin-left:.4rem;padding:.05rem .5rem;background:var(--accent);color:#fff;border-radius:999px;font-size:.72rem;font-weight:700;font-style:normal;vertical-align:middle;}
+    .pub-links{margin-top:.35rem;font-size:.95rem;}
+    details.bib{margin-top:.5rem;} details.bib summary{cursor:pointer;color:var(--muted);font-size:.9rem;width:max-content;}
+    details.bib pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;overflow-x:auto;font-size:.82rem;line-height:1.5;margin:.5rem 0 0;}
+    .toggle{position:fixed;top:1rem;right:1rem;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;font-size:1rem;z-index:5;}
+    .wrap{max-width:960px;margin:0 auto;padding:2.8rem 1.5rem 4rem;}
+    .head{margin-bottom:.5rem;} .head::after{content:"";display:block;clear:both;}
+    .head .portrait{float:right;width:330px;margin:.3rem 0 1rem 2.2rem;border-radius:18px;border:1px solid var(--line);box-shadow:0 20px 54px -22px rgba(0,0,0,.5);}
+    .head h1{font-size:2.6rem;margin:0 0 .15rem;letter-spacing:-.015em;} .head h1 .last{font-weight:800;}
+    .head .role{color:var(--muted);margin-bottom:.7rem;font-size:1.08rem;}
+    .icons{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem;}
+    .icons a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--fg);font-size:1rem;transition:.15s;}
+    .icons a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;transform:translateY(-2px);}
+    h2{font-size:.95rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:2.4rem 0 1.3rem;font-weight:700;}
+    .pub{display:grid;grid-template-columns:400px 1fr;gap:0;align-items:stretch;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);margin:1.5rem 0;transition:box-shadow .2s,transform .2s;}
+    .pub:hover{box-shadow:0 22px 50px -26px rgba(0,0,0,.42);transform:translateY(-2px);}
+    .pub .thumb{border:none;border-radius:0;aspect-ratio:auto;height:100%;min-height:230px;}
+    .pub .pub-body{padding:1.4rem 1.6rem;}
+    @media (max-width:720px){.pub{grid-template-columns:1fr;} .pub .thumb{min-height:0;aspect-ratio:16/10;} .pub .pub-body{padding:1rem 1.3rem 1.3rem;}}
+    .news{list-style:none;padding:0;margin:.2rem 0 1rem;}
+    .news li{display:flex;gap:1rem;padding:.45rem 0;font-size:.97rem;border-top:1px solid var(--line);}
+    .news li:first-child{border-top:none;}
+    .news .date{color:var(--muted);white-space:nowrap;min-width:5.5rem;}
+    .news-more{background:none;border:none;padding:0;margin:.1rem 0 1rem;font:inherit;font-size:.92rem;color:var(--accent);cursor:pointer;}
+    .news-more:hover{color:var(--accent-soft);text-decoration:underline;}
+    @media (max-width:640px){.head .portrait{float:none;width:100%;max-width:260px;display:block;margin:0 auto 1rem;}}
+  </style></head><body>
+  <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button><div class="wrap"><header class="head">
+      <img class="portrait" src="assets/img/profile.jpg" alt="Bartłomiej Baranowski">
+      <h1>Bartłomiej <span class="last">Baranowski</span></h1>
+        <div class="role">PhD Student · Technical University of Munich</div>
+        <p>I am a PhD student at the Technical University of Munich, in the <a href="https://niessnerlab.org" target="_blank" rel="noopener">Visual Computing &amp; Artificial Intelligence Group</a> led by <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener">Prof. Matthias Nießner</a>.</p><p><b>Interests.</b> I work on spatial intelligence for perceiving, reasoning about, and acting in the 3D world.</p><p><b>Bio.</b> Master&#39;s in machine learning from the University of Tübingen (lab of <a href="https://www.cvlibs.net/" target="_blank" rel="noopener">Prof. Andreas Geiger</a>), bachelor&#39;s in computer science from Lodz University of Technology. Outside research: playing accordion, running, climbing.</p>
+        <div class="icons"><a href="mailto:bartlomiej.baranowski@tum.de" title="Email"><i class="far fa-envelope-open"></i></a>
+        <a href="https://github.com/BaranowskiBrt" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/bartlomiej-baranowski" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/baranowskibrt" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://scholar.google.com/citations?user=Y_qag2sAAAAJ" target="_blank" rel="noopener" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="assets/cv.pdf" target="_blank" rel="noopener" title="CV"><i class="far fa-file-lines"></i></a></div>
+    </header>
+    <h2>News</h2>
+    <ul class="news">
+      <li><span class="date">Jun 2026</span><span><b>OneCanvas</b> preprint released on arXiv.</span></li>
+      <li><span class="date">Nov 2025</span><span>Started my PhD at TUM.</span></li>
+      <li><span class="date">Nov 2025</span><span><b>ConeGS</b> preprint on arXiv, accepted as an Oral at 3DV 2026.</span></li>
+    </ul>
+    <h2>Publications</h2>
+          <article class="pub">
+        <div class="thumb">
+          <img src="assets/vid/onecanvas_poster.jpg" alt="OneCanvas">
+          <video muted loop playsinline preload="none" poster="assets/vid/onecanvas_poster.jpg">
+            <source src="assets/vid/onecanvas_hover.webm" type="video/webm">
+            <source src="assets/vid/onecanvas_hover.mp4" type="video/mp4">
+          </video>
+          <span class="badge"></span>
+        </div>
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://baranowskibrt.github.io/onecanvas/" target="_blank" rel="noopener">OneCanvas: 3D Scene Understanding via Panoramic Reprojection</a></div>
+          <div class="pub-authors">Bartłomiej Baranowski, <a href="https://daveredrum.github.io/" target="_blank" rel="noopener">Dave Zhenyu Chen</a>, <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener">Matthias Nießner</a></div>
+          <div class="pub-venue">arXiv, 2026</div>
+          <div class="pub-links"><a href="https://baranowskibrt.github.io/onecanvas/" target="_blank" rel="noopener">Project Page</a> · <a href="https://arxiv.org/pdf/2606.19253" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/baranowskibrt/onecanvas" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="thumb slider">
+          <img src="assets/vid/conegs_slider_poster.jpg" alt="ConeGS comparison">
+          <video class="cmp cmp-base" muted loop playsinline preload="none">
+            <source src="assets/vid/conegs_R.webm" type="video/webm">
+            <source src="assets/vid/conegs_R.mp4" type="video/mp4">
+          </video>
+          <video class="cmp cmp-top" muted loop playsinline preload="none">
+            <source src="assets/vid/conegs_L.webm" type="video/webm">
+            <source src="assets/vid/conegs_L.mp4" type="video/mp4">
+          </video>
+          <span class="cmp-divider"></span>
+          <span class="cmp-label left">ConeGS</span>
+          <span class="cmp-label right">3DGS-MCMC</span>
+        </div>
+        <div class="pub-body">
+          <div class="pub-title"><a href="https://baranowskibrt.github.io/conegs/" target="_blank" rel="noopener">ConeGS: Error-Guided Densification Using Pixel Cones for Improved Reconstruction with Fewer Primitives</a></div>
+          <div class="pub-authors">Bartłomiej Baranowski, <a href="https://s-esposito.github.io/" target="_blank" rel="noopener">Stefano Esposito</a>, <a href="https://patriciagschossmann.github.io/" target="_blank" rel="noopener">Patricia Gschoßmann</a>, <a href="https://apchenstu.github.io/" target="_blank" rel="noopener">Anpei Chen</a>, <a href="https://www.cvlibs.net/" target="_blank" rel="noopener">Andreas Geiger</a></div>
+          <div class="pub-venue">International Conference on 3D Vision (3DV), 2026 <span class="badge-oral">Oral</span></div>
+          <div class="pub-links"><a href="https://baranowskibrt.github.io/conegs/" target="_blank" rel="noopener">Project Page</a> · <a href="https://arxiv.org/pdf/2511.06810" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/baranowskibrt/conegs" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
 
-  <title>Bartłomiej Baranowski</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="row" style="margin-top: 3em;">
-                    <div class="col-sm-12" style="margin-bottom: 1em;">
-                    <h3 class="display-4" style="text-align: center;"><span style="font-weight: bold;">Bartłomiej</span> Baranowski</h3>
-                    </div>
-                    <br>
-                    <div class="col-md-8" style="">
-                        
-                <p>
-                    I am a PhD student at the Technical University of Munich, in the <a href="https://niessnerlab.org" target="_blank" rel="noopener noreferrer">Visual Computing & Artificial Intelligence Group</a> led by <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener noreferrer">Prof. Matthias Nießner</a>.
-                </p>
-                <p>
-                    <span style="font-weight: bold;">Interests:</span>
-                    I am primarily interested in 3D computer vision and machine learning, with a focus on 3D reconstruction and scene understanding. My work spans autonomous vision, medical imaging, and deep learning for image and video analysis. I am passionate about developing methods that advance both fundamental understanding and practical applications in computer vision and machine learning.
-                </p>
-
-                <p>
-                    <span style="font-weight: bold;">Bio:</span>
-                    I hold a master's degree in machine learning from the University of Tübingen, where I conducted research in the lab of <a href="https://www.cvlibs.net/" target="_blank" rel="noopener noreferrer">Prof. Andreas Geiger</a>. I completed my bachelor's degree in computer science at Lodz University of Technology. During my studies, I contributed to several research projects in computer vision, including work on autonomous systems and medical imaging. I see myself as an enthusiastic researcher and programmer. In my free time, I enjoy exploring new ideas, playing musical instruments, running, climbing, and staying active outdoors.
-                </p>
-                <p>
-                        <a href="mailto:bartlomiej.baranowski@tum.de" style="margin-right: 15px"><i class="far fa-envelope-open fa-lg"></i> Mail</a>
-                        <a href="https://github.com/BaranowskiBrt" target="_blank" style="margin-right: 5px"><i class="fab fa-github fa-lg"></i> Github</a>
-                        <a href="https://www.linkedin.com/in/bartlomiej-baranowski" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
-                        <a href="https://twitter.com/baranowskibrt" target="_blank" style="margin-right: 5px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
-                        <a href="https://bsky.app/profile/baranowskibrt.bsky.social" target="_blank" style="margin-right: 5px"><i class="fab fa-bluesky fa-lg"></i> Bluesky</a>
-                        <a href="https://scholar.google.com/citations?user=Y_qag2sAAAAJ" target="_blank" style="margin-right: 5px"><i class="ai ai-google-scholar ai-lg"></i> Google Scholar</a>
-                </p>
-    
-                    </div>
-                    <div class="col-md-4" style="">
-                        <img src="assets/img/profile.jpg" class="img-thumbnail" width="560px" alt="Profile picture">
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 1em;">
-                    <div class="col-sm-12" style="">
-                        <h4>Publications</h4>
-                        <div style="margin-bottom: 3em;"> <div class="row"><div class="col-sm-3"><img src="assets/img/publications/onecanvas.png" class="img-fluid img-thumbnail" alt="Project image"></div><div class="col-sm-9"><a href="https://baranowskibrt.github.io/onecanvas/" target="_blank">OneCanvas: 3D Scene Understanding via Panoramic Reprojection</a> <br>Bartłomiej Baranowski, <a href="https://daveredrum.github.io/" target="_blank">Dave Zhenyu Chen</a>, <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank">Matthias Nießner</a> <br><span style="font-style: italic;">arXiv</span>, 2026 <br><a href="https://baranowskibrt.github.io/onecanvas/" target="_blank">Project Page</a> / <a href="https://arxiv.org/pdf/2606.19253" target="_blank">Paper</a> /<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsebaranowski2026onecanvas" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapsebaranowski2026onecanvas"><div class="card card-body"><pre><code>@misc{baranowski2026onecanvas, 
-	author = {Bartłomiej Baranowski and Dave Zhenyu Chen and Matthias Nießner}, 
-	title = {OneCanvas: 3D Scene Understanding via Panoramic Reprojection}, 
-	year = {2026}, 
-	eprint = {2606.19253}, 
-	archivePrefix = {arXiv}, 
-	primaryClass = {cs.CV}, 
-}</pre></code></div></div> </div> </div> </div><div style="margin-bottom: 3em;"> <div class="row"><div class="col-sm-3"><img src="assets/img/publications/conegs.png" class="img-fluid img-thumbnail" alt="Project image"></div><div class="col-sm-9"><a href="https://baranowskibrt.github.io/conegs/" target="_blank">ConeGS: Error-Guided Densification Using Pixel Cones for Improved Reconstruction with Fewer Primitives</a> <span style="color: red;">(Oral Presentation)</span><br>Bartłomiej Baranowski, <a href="https://s-esposito.github.io/" target="_blank">Stefano Esposito</a>, <a href="https://patriciagschossmann.github.io/" target="_blank">Patricia Gschoßmann</a>, <a href="https://apchenstu.github.io/" target="_blank">Anpei Chen</a>, <a href="https://www.cvlibs.net/" target="_blank">Andreas Geiger</a> <br><span style="font-style: italic;">2026 International Conference on 3D Vision (3DV)</span>, 2026 <br><a href="https://baranowskibrt.github.io/conegs/" target="_blank">Project Page</a> / <a href="https://arxiv.org/pdf/2511.06810" target="_blank">Paper</a> /<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsebaranowski2026conegs" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapsebaranowski2026conegs"><div class="card card-body"><pre><code>@InProceedings{baranowski2026conegs, 
-	author = {Bartłomiej Baranowski and Stefano Esposito and Patricia Gschoßmann and Anpei Chen and Andreas Geiger}, 
-	title = {ConeGS: Error-Guided Densification Using Pixel Cones for Improved Reconstruction with Fewer Primitives}, 
-	booktitle = {2026 International Conference on 3D Vision (3DV)}, 
-	year = {2026}, 
-}</pre></code></div></div> </div> </div> </div>
-                    </div>
-                </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
-                    
-            <div class="col-sm-12" style="">
-                <h4>Homepage Template</h4>
-                <p>
-                    Website template by <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank">Michael Niemeyer</a>
-                </p>
-            </div>
-    
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div?
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-</body>
-
-</html>
-    
+    <h2>Teaching</h2>
+    <ul class="news">
+      <li><span class="date">2026&ndash;</span><span>Teaching Assistant, <a href="https://niessner.github.io/ADL4CV/" target="_blank" rel="noopener">Advanced Deep Learning for Computer Vision</a> (ADL4CV), TUM.</span></li>
+    </ul><footer style="margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;">© 2026 Bartłomiej Baranowski.</footer></div>
+    <script>
+    document.querySelectorAll('.thumb video').forEach(function(v){
+      var f=v.closest('.pub');
+      f.addEventListener('mouseenter',function(){v.play().catch(function(){});});
+      f.addEventListener('mouseleave',function(){v.pause();v.currentTime=0;});
+    });
+    (function(){
+      var list=document.querySelector('.news'); if(!list)return;
+      var items=list.querySelectorAll('li'), N=5; if(items.length<=N)return;
+      for(var i=N;i<items.length;i++)items[i].style.display='none';
+      var more=document.createElement('button'); more.className='news-more'; more.textContent='Show more';
+      list.after(more); var open=false;
+      more.addEventListener('click',function(){open=!open;for(var i=N;i<items.length;i++)items[i].style.display=open?'flex':'none';more.textContent=open?'Show less':'Show more';});
+    })();
+    var root=document.documentElement,btn=document.getElementById('themeToggle');
+    var saved=localStorage.getItem('theme'); if(saved)root.setAttribute('data-theme',saved);
+    function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;}
+    function paint(){btn.textContent=isDark()?'☀️':'🌙';} paint();
+    btn.addEventListener('click',function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('theme',n);paint();});
+  </script>
+</body></html>
